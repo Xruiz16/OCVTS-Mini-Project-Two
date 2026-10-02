@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comic-Con</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #111827; color: white; margin: 0; }
+      .wrap { width: 90%; margin: 0 auto; }
+      .top { background: #1f2937; padding: 20px 0; }
+      h1 { margin: 0; }
+      .main { padding: 25px 0; }
+      .hero { display: flex; gap: 20px; align-items: center; }
+      .hero img { width: 100%; border-radius: 10px; }
+      .big { font-size: 30px; margin: 0 0 10px; }
+      .button { display: inline-block; background: #f59e0b; color: black; padding: 10px 18px; text-decoration: none; border-radius: 6px; margin-top: 10px; }
+      .box { background: #1f2937; padding: 18px; border-radius: 10px; margin-top: 20px; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+      .small { background: #374151; padding: 15px; border-radius: 8px; }
+      .ticket { background: #1f2937; padding: 18px; border-radius: 10px; margin-top: 20px; }
+      .price { font-size: 28px; color: #fbbf24; font-weight: bold; }
+      ul { padding-left: 20px; }
+      img { max-width: 100%; }
+      .registration { margin-top: 20px; }
+      .registration input[type="text"],
+      .registration input[type="email"],
+      .registration input[type="tel"],
+      .registration select {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #6b7280;
+        border-radius: 6px;
+        background: #111827;
+        color: white;
+      }
+      .registration input[type="radio"], .registration input[type="checkbox"] {
+        accent-color: #f59e0b;
+      }
+      .registration button {
+        border: 0;
+        cursor: pointer;
+        font: inherit;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="wrap">
+        <h1>Comic-Con</h1>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="wrap hero">
+        <div>
+          <p class="big">Comic Convention 2026</p>
+          <p>A fun event for comic fans, anime lovers, cosplayers, and gamers.</p>
+          <a href="#register" class="button">Get Tickets</a>
+        </div>
+        <img src="https://www.comic-con.org/uploads/2023/10/museum-entrance-hero-1024x679-1.webp" alt="Comic convention" />
+      </div>
+    </div>
+
+    <div class="wrap box">
+      <h2>Event Details</h2>
+      <div class="grid">
+        <div class="small"><strong>Date:</strong> October 17-18, 2026</div>
+        <div class="small"><strong>Time:</strong> 10:00 AM - 8:00 PM</div>
+        <div class="small"><strong>Location:</strong> American Dream Mall</div>
+        <div class="small"><strong>Cost:</strong> Tickets from $25</div>
+      </div>
+    </div>
+
+    <div class="wrap box">
+      <h2>Event Description</h2>
+      <p>Comic-Con is a comic convention where people can enjoy comic art, cosplay, creator panels, games, and vendor booths. It is a great event for fans of all ages.</p>
+      <img src="https://www.newyorkcomiccon.com/content/dam/sitebuilder/rna/new-york-comic-con/metadata/seo/exhibitors-and-artists-nycc-new-york-comic-con.jpg/_jcr_content/renditions/original" alt="Convention crowd" />
+    </div>
+
+    <div class="wrap box" id="tickets">
+      <h2>Admission Information</h2>
+      <div class="grid">
+        <div class="ticket">
+          <h3>Single Day</h3>
+          <div class="price">$25</div>
+        </div>
+        <div class="ticket">
+          <h3>Weekend Pass</h3>
+          <div class="price">$40</div>
+        </div>
+        <div class="ticket">
+          <h3>VIP</h3>
+          <div class="price">$85</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap box registration" id="register">
+      <h2>Register for Comic-Con</h2>
+      <form method="post">
+        <h3>Personal Information</h3>
+        <p>
+          <label for="first-name">First Name</label><br />
+          <input id="first-name" name="firstName" type="text" required />
+        </p>
+        <p>
+          <label for="last-name">Last Name</label><br />
+          <input id="last-name" name="lastName" type="text" required />
+        </p>
+        <p>
+          <label for="email">Email Address</label><br />
+          <input id="email" name="email" type="email" required />
+        </p>
+        <p>
+          <label for="phone">Phone Number</label><br />
+          <input id="phone" name="phone" type="tel" required />
+        </p>
+        <p>
+          <label for="badge-name">Name for Badge</label><br />
+          <input id="badge-name" name="badgeName" type="text" />
+        </p>
+
+        <h3>Attendance Type</h3>
+        <p>
+          <label><input name="attendance" type="radio" value="in-person" required /> In Person</label><br />
+          <label><input name="attendance" type="radio" value="virtual" /> Virtual</label>
+        </p>
+
+        <p>
+          <label for="ticket-type">Ticket Type</label><br />
+          <select id="ticket-type" name="ticketType" required>
+            <option value="" selected disabled>Select a ticket</option>
+            <option value="student">Student</option>
+            <option value="general-admission">General Admission</option>
+            <option value="vip">VIP</option>
+          </select>
+        </p>
+
+        <h3>Additional Options</h3>
+        <p>
+          <label><input name="options" type="checkbox" value="lunch" /> Lunch</label><br />
+          <label><input name="options" type="checkbox" value="event-t-shirt" /> Event T-Shirt</label><br />
+          <label><input name="options" type="checkbox" value="workshop" /> Workshop</label>
+        </p>
+
+        <button class="button" type="submit">Submit Registration</button>
+      </form>
+    </div>
+
+    <div class="wrap box">
+      <h2>Important Details</h2>
+      <ul>
+        <li>Doors open at 10:00 AM</li>
+        <li>Cosplay is welcome</li>
+        <li>All ages are welcome</li>
+        <li>Parking is available nearby</li>
+        <li>Food and drinks will be sold at the event</li>
+      </ul>
+    </div>
+  </body>
+  <footer>
+    <div class="wrap" style="padding: 20px 0; text-align: center; background: #1f2937;">
+      &copy; 2026 Comic-Con. All rights reserved.
+    </div>
+</html>
